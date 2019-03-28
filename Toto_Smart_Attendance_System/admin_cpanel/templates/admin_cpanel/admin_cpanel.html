@@ -1,0 +1,15 @@
+{% extends 'base_layout2.html' %}
+
+{% block admin_cpanel %} class="nav-item active" {% endblock %}
+
+{% block content %}
+    <h1>CPanel</h1>
+    <div class="create-article">
+        <form class="site-form" action="{% url 'admin_cpanel:admin_cpanel' %}" method="post" enctype="multipart/form-data">
+            <h2>Submit Your File</h2>
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Create">
+        </form>
+    </div>
+{% endblock %}
