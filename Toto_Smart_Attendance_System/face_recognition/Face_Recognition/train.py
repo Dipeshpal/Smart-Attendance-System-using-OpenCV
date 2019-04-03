@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 image_dir = os.path.join(BASE_DIR, "images_dataset")
 
 # load har-cascade classifier
-face_cascade = cv2.CascadeClassifier("cascades/haarcascade_frontalface_default.xml")
+face_cascade = cv2.CascadeClassifier("face_recognition/Face_Recognition/cascades/haarcascade_frontalface_default.xml")
 
 
 def check(undetected_faces, detected_faces, faces, label, file):
@@ -52,6 +52,7 @@ def training(x_train, y_train):
     This will create data-set
     :return: It will return training and testing data-set
     """
+    print("Training Started")
     detected_faces = 0
     undetected_faces = 0
     x_train_dataset = []
@@ -60,28 +61,28 @@ def training(x_train, y_train):
     length = len(x_train)
 
     for i in range(length):
-        # print("Training for: ", i)
         a = x_train[i]
         b = y_train[i]
         # detect faces in image_array (Find region of interest (only face))
         faces = face_cascade.detectMultiScale(a, scaleFactor=1.5, minNeighbors=5)
-
         # check number of detected and undetected faces in frames/files
         # undetected_faces, detected_faces = check(undetected_faces, detected_faces, faces, label, file)
-
 
         # loop through faces
         for (x, y, w, h) in faces:
             # Find pixels of face only with the help of faces("numpy array") form gray image(numpy array)
             # roi is region of interest (face only)
-            # # # # # # # #
             roi = np.array(a[y:y + h, x:x + w])
+
             # resize all faces in 150*150 numpy array
             roi = np.resize(roi, [150, 150])
+
             # append roi to x_features (features)
             x_train_dataset.append(roi)
+
             # convert id_ (variable) into numpy array
             id_ = np.array(b)
+
             # append id (numpy array) in y_labels(list)
             y_train_dataset.append(id_)
 

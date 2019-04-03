@@ -4,7 +4,7 @@ import urllib.request
 # file_name = "personname.mp4"
 
 
-def dwn_video(dwn_link,file_name):
+def dwn_video(dwn_link, file_name):
     path = 'videos/'
     name = path + file_name + '.mp4'
     urllib.request.urlretrieve(dwn_link, name)

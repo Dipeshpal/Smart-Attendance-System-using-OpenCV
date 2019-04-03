@@ -13,7 +13,7 @@ def admin_cpanel(request):
                 instance = form.save(commit=False)
                 instance.author = request.user
                 instance.save()
-                return redirect('home:list')
+                return redirect('face_recognition:face_recognition')
         else:
             form = forms.UploadFile()
         return render(request, 'admin_cpanel/admin_cpanel.html', {'form': form})

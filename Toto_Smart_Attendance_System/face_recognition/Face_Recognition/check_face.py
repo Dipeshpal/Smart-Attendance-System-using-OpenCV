@@ -4,12 +4,9 @@ import numpy as np
 
 def check(clf):
     # test start
-    print("Reading test image")
-    test = cv2.imread('capture_image.jpg')
-    # cv2.imshow('image', test)
-    # cv2.waitKey(0)
-    # cv2.destroyAllWindows()
-    face_cascade = cv2.CascadeClassifier("cascades/haarcascade_frontalface_default.xml")
+    print("Reading image")
+    test = cv2.imread('face_recognition/Face_Recognition/capture_image.jpg')
+    face_cascade = cv2.CascadeClassifier("face_recognition/Face_Recognition/cascades/haarcascade_frontalface_default.xml")
 
     gray = cv2.cvtColor(test, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.5, minNeighbors=5)
@@ -36,6 +33,8 @@ def check(clf):
         if prediction_face == 0:
             print("Dipesh")
         elif prediction_face == 1:
+            print("Gayyur")
+        elif prediction_face == 2:
             print("Rubal")
         elif prediction_face == 2:
             print("Totlaney")

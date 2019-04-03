@@ -87,14 +87,14 @@ def create_dataset():
 
     # convert x_features list into numpy array
     features_dataset = np.array(x_features)
-
+    print("convert x_features list into numpy array")
     # 3d numpy array to 2d array
     # num_features, nx, ny = x_features.shape
     # features_dataset = x_features.reshape((num_features, nx * ny))
 
     # convert y_labels list into numpy array
     label_dataset = np.array(y_labels)
-
+    print("convert y_labels list into numpy array")
     return features_dataset, label_dataset
 
 # features_dataset, label_dataset = create_dataset()

@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 image_dir = os.path.join(BASE_DIR, "images_dataset")
 
 # load har-cascade classifier
-face_cascade = cv2.CascadeClassifier("cascades/haarcascade_frontalface_default.xml")
+face_cascade = cv2.CascadeClassifier("face_recognition/Face_Recognition/cascades/haarcascade_frontalface_default.xml")
 
 
 def check(undetected_faces, detected_faces, faces, label, file):
@@ -60,24 +60,26 @@ def testing(x_test, y_test):
     length = len(x_test)
 
     for i in range(length):
-        # print("Training for: ", i)
         a = x_test[i]
         b = y_test[i]
 
         # detect faces in image_array (Find region of interest (only face))
         faces = face_cascade.detectMultiScale(a, scaleFactor=1.5, minNeighbors=5)
-
         # loop through faces
         for (x, y, w, h) in faces:
             # Find pixels of face only with the help of faces("numpy array") form gray image(numpy array)
             # roi is region of interest (face only)
             roi = np.array(a[y:y + h, x:x + w])
+
             # resize all faces in 150*150 numpy array
             roi = np.resize(roi, [150, 150])
+
             # append roi to x_features (features)
             x_test_dataset.append(roi)
+
             # convert id_ (variable) into numpy array
             id_ = np.array(b)
+
             # append id (numpy array) in y_labels(list)
             y_test_dataset.append(id_)
 
@@ -90,5 +92,5 @@ def testing(x_test, y_test):
 
     # convert y_labels list into numpy array
     label_dataset_test = np.array(y_test_dataset)
-
+    print("Testing Dataset created")
     return features_dataset_test, label_dataset_test
