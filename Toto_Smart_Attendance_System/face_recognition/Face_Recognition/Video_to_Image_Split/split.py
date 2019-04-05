@@ -1,6 +1,7 @@
 import cv2
 import os
 
+
 def split(folder, source_video):
     dir_name = folder
     os.mkdir(dir_name)

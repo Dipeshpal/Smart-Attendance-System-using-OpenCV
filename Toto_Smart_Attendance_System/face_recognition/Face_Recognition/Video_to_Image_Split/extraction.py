@@ -7,7 +7,7 @@ import shutil
 from . import link_genrator
 
 
-def start_training():
+def start_creating_dataset():
     file_loc = "media/sv.xlsx"
     workbook = xlrd.open_workbook(file_loc)
     sh = workbook.sheet_by_index(0)
@@ -32,5 +32,3 @@ def video_delete(file_name1):
 
 def move(src, dest):
     shutil.move(src, dest)
-
-
