@@ -17,6 +17,7 @@ urlpatterns = [
     url(r'^privacy_policy/', include('privacy_policy.urls')),
     url(r'^contact_us/', include('contact_us.urls')),
     url(r'^videos/', include('videos.urls')),
+    url(r'mark_attendance', include('mark_attendance.urls')),
 ]
 
 if settings.DEBUG:

@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'admin_cpanel',
     'accounts.apps.AccountsConfig',
     'pagedown',
-    'face_recognition'
+    'face_recognition',
+    'mark_attendance',
 ]
 
 MIDDLEWARE = [

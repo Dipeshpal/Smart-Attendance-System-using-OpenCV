@@ -54,6 +54,12 @@
 
                   <!---Login / Signup / Logout--->
                   {% if user.is_authenticated%}
+                        {% if user.is_staff %}
+                         <li {% block mark_attendance %} {% endblock %} class="nav-item">
+                                <a class="nav-link" href="/mark_attendance">Mark Attendance</a>
+                         </li>
+                        {% endif %}
+
                         {% if user.is_superuser  %}
                           <li {% block articleCreateli %} {% endblock %} class="nav-item">
                                 <a class="nav-link" href="/create/">Create New Article</a>
