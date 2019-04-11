@@ -1,5 +1,32 @@
 from .Video_to_Image_Split import extraction, rotate
 from .face_recognition import choice
+import shutil
+import os
+import cv2
+
+# Find current face_train.py directory
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# From base directory find images_data-set directory
+image_dir = os.path.join(BASE_DIR, ".../media/check_image")
+
+
+def move(src, dest):
+    shutil.move(src, dest)
+
+
+def get_path_and_label(root, file):
+    """
+    This will get the path of image and get the label of image folder
+    :param root: root directory
+    :param file: folder
+    :return: path(actual image), label (folder name)
+    """
+    # path of image (path is image)
+    path = os.path.join(root, file)
+    # Grab name of folder / Grab image folder name and replace spaces to - and convert all into lower case
+    label = os.path.basename(root).replace(" ", "-").lower()
+    return path, label
 
 
 def start_training():
@@ -12,5 +39,16 @@ def start_training():
     # ML Training module call with choice 2
     choice(2)
 
-    # Check Image
-    choice(3)
+
+def start_check_image():
+    print("CWD: ", os.getcwd())
+    for root, dirs, files in os.walk('media/check_image'):
+        for file in files:
+            if file.endswith("png") or file.endswith("jpg"):
+                path, label = get_path_and_label(root, file)
+                img = cv2.imread(path)
+
+                # move(img, 'face_recognition/Face_Recognition/check_image')
+                # print("line 56")
+                # Check Image
+                choice(3, img)

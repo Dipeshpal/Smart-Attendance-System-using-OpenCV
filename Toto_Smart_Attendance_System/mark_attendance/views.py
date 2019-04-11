@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from . import forms
+from . import trigger
 
 
 @login_required(login_url="/accounts/login/")
@@ -13,9 +14,16 @@ def mark_attendance(request):
                 instance = form.save(commit=False)
                 instance.author = request.user
                 instance.save()
-                return redirect('mark_attendance/mark_attendance.html')
+                print("Calling Check Image -")
+                trigger.start()
+                return render(request, 'mark_attendance/success.html')
         else:
             form = forms.UploadFile()
         return render(request, 'mark_attendance/mark_attendance.html', {'form': form})
     else:
         return render(request, 'mark_attendance/not_valid_user.html')
+
+
+@login_required(login_url="/accounts/login/")
+def mark_attendance_success(request):
+    return render(request, 'mark_attendance/success.html')

@@ -134,7 +134,7 @@ def fit_classifire():
     return clf
 
 
-def choice(ch):
+def choice(ch, img_file):
     # print("Press 1 for RUN model (automatically detect if previous model present)")
     # print("Press 2 for create new model (overwrite existing model)")
     # print("Press 3 for check your image")
@@ -155,7 +155,7 @@ def choice(ch):
 
             if flag == 1:
                 print("Checking Capture Image")
-                check_face.check(clf)
+                check_face.check(clf, img_file)
             else:
                 x_train, x_test, y_train, y_test = create_numpy_dataset()
 
@@ -192,6 +192,6 @@ def choice(ch):
                 read_model = 'face_recognition/Face_Recognition/model/finalized_model.sav'
                 clf = joblib.load(read_model)
                 print("Checking Capture Image")
-                check_face.check(clf)
+                check_face.check(clf, img_file)
     except:
         print("Invalid input try again")

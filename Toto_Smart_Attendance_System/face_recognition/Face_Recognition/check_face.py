@@ -1,11 +1,15 @@
 import cv2
 import numpy as np
+from . import attend
 
 
-def check(clf):
+def check(clf, img_file):
     # test start
     print("Reading image")
-    test = cv2.imread('face_recognition/Face_Recognition/capture_image.jpg')
+    # print(type(img_file))
+    # test = cv2.imread('face_recognition/Face_Recognition/capture_image.jpg')
+    test = img_file
+
     face_cascade = cv2.CascadeClassifier("face_recognition/Face_Recognition/cascades/haarcascade_frontalface_default.xml")
 
     gray = cv2.cvtColor(test, cv2.COLOR_BGR2GRAY)
@@ -31,14 +35,17 @@ def check(clf):
         prediction_face = prediction_face[0]
 
         if prediction_face == 0:
-            print("Dipesh")
-        elif prediction_face == 1:
             print("Gayyur")
-        elif prediction_face == 2:
-            print("Rubal")
-        elif prediction_face == 2:
-            print("Totlaney")
+            roll_no = 22
+            name = 'Gayyur'
+            attend.attendance(roll_no, name, 'p')
+        elif prediction_face == 1:
+            roll_no = 74
+            name = 'Totlaney'
+            attend.attendance(roll_no, name, 'p')
         else:
             print("Dont' know")
+
+    #         Find face folder name roll and call attendance
     except:
         print("Face not found")

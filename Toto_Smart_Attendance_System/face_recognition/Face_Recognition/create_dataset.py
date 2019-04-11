@@ -65,6 +65,7 @@ def create_dataset():
     for root, dirs, files in os.walk(image_dir):
         for file in files:
             if file.endswith("png") or file.endswith("jpg"):
+                print("File: ", files)
 
                 path, label = get_path_and_label(root, file)
 
