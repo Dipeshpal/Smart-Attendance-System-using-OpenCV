@@ -18,6 +18,8 @@ urlpatterns = [
     url(r'^contact_us/', include('contact_us.urls')),
     url(r'^videos/', include('videos.urls')),
     url(r'mark_attendance', include('mark_attendance.urls')),
+    url(r'fetch_data', include('fetch_data.urls')),
+    url(r'^terms_and_conditions', include('terms_and_conditions.urls')),
 ]
 
 if settings.DEBUG:

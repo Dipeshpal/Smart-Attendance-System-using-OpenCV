@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'pagedown',
     'face_recognition',
     'mark_attendance',
+    'fetch_data',
+    'terms_and_conditions',
 ]
 
 MIDDLEWARE = [

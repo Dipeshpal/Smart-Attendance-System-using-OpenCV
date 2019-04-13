@@ -26,7 +26,7 @@
 	<link href="{% static '/css/youmax.css' %}" rel="stylesheet" />
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/png"  href="https://i.ibb.co/KrYsVJR/logo.png" %}>
+    <link rel="shortcut icon" type="image/png"  href="https://i.ibb.co/kh9B5dC/logo.png" %}>
 
     {% block script %} {% endblock %}
 </head>
@@ -64,6 +64,10 @@
                          </li>
                         {% endif %}
 
+                         <li {% block fetch_data %} {% endblock %} class="nav-item">
+                                <a class="nav-link" href="/fetch_data">Check Attendance</a>
+                         </li>
+
                         {% if user.is_superuser%}
                           <li {% block articleCreateli %} {% endblock %} class="nav-item">
                                 <a class="nav-link" href="/create/">Create New Article</a>
@@ -73,7 +77,6 @@
                                 <a class="nav-link" href="/admin_cpanel/">Cpanel</a>
                           </li>
                         {% endif %}
-
 
                         <li {% block profileli %} {% endblock %} class="nav-item">
                               <a class="nav-link" href="/accounts/profile/">Profile</a>
@@ -120,10 +123,10 @@
    <footer class="py-5 bg-dark">
        <div align="center">
            <h2 id="text_about_heading" style="color: #ffffff; text-size: 5%">We are on Social</h2>
-           <a href="https://www.youtube.com/DipeshPal17" target="_blank"><img style="max-width: 5%; height: 5%;" class="round-circle account-img" src="/media/social/YouTube.png"></a>
-           <a href="https://www.youtube.com/DipeshPal17" target="_blank"><img style="max-width: 5%; height: 5%;" class="round-circle account-img" src="/media/social/Instagram.png"></a>
-           <a href="https://www.youtube.com/DipeshPal17" target="_blank"><img style="max-width: 5%; height: 5%;" class="round-circle account-img" src="/media/social/Facebook.png"></a>
-           <a href="https://www.youtube.com/DipeshPal17" target="_blank"><img style="max-width: 5%; height: 5%;" class="round-circle account-img" src="/media/social/Twitter.png"></a>
+           <a href="#" target="_blank"><img style="max-width: 5%; height: 5%;" class="round-circle account-img" src="/media/social/YouTube.png"></a>
+           <a href="#" target="_blank"><img style="max-width: 5%; height: 5%;" class="round-circle account-img" src="/media/social/Instagram.png"></a>
+           <a href="#" target="_blank"><img style="max-width: 5%; height: 5%;" class="round-circle account-img" src="/media/social/Facebook.png"></a>
+           <a href="#" target="_blank"><img style="max-width: 5%; height: 5%;" class="round-circle account-img" src="/media/social/Twitter.png"></a>
        </div>
 
       <div class="container">
@@ -143,6 +146,10 @@
 
             <li class="list-inline-item">
                 <a href="/privacy_policy/privacy_policy.html" class="text-light">Privacy Policy</a>
+            </li>
+
+            <li class="list-inline-item">
+                <a href="/terms_and_conditions" class="text-light">Terms and Conditions</a>
             </li>
           </ul>
       </div>

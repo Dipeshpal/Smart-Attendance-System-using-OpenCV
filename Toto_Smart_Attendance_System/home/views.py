@@ -9,7 +9,7 @@ from django.shortcuts import get_object_or_404
 
 def homepage(request):
     homeblog_list = Home.objects.all().order_by('-date')
-    print("Type: ", type(homeblog_list))
+    # print("Type: ", type(homeblog_list))
     # Pagination
     # Show 10 Post Per Page
     paginator = Paginator(homeblog_list, 10)

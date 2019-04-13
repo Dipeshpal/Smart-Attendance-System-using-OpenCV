@@ -1,5 +1,6 @@
 from .Video_to_Image_Split import extraction, rotate
 from .face_recognition import choice
+from .fetch import fetching
 import shutil
 import os
 import cv2
@@ -52,3 +53,8 @@ def start_check_image():
                 # print("line 56")
                 # Check Image
                 choice(3, img)
+
+
+def fetch_data(roll_no):
+    enrollment_no, name, total_days, total_present_days, precentage = fetching(roll_no)
+    return enrollment_no, name, total_days, total_present_days, precentage
