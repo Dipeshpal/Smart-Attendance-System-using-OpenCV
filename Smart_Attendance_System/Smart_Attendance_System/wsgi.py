@@ -1,5 +1,5 @@
 """
-WSGI config for Toto_Smart_Attendance_System project.
+WSGI config for Smart_Attendance_System project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Toto_Smart_Attendance_System.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Smart_Attendance_System.settings')
 
 application = get_wsgi_application()
