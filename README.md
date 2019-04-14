@@ -78,7 +78,8 @@ If you want to know backend of OpenCv used in this project then just [click here
 Feel free to contact me
 
 # License-
-You have to give me credit
+You have to give me credi.
+
 You can add following lines in your project/code/videos/document to give me credit.
 
 ```
@@ -88,3 +89,5 @@ github.com/Dipeshpal
 www.dipeshpal.com
 www.youtube.com/DipeshPal17
 ```
+
+You can thanks me by Subscribe me on YouTube: [Subscribe](www.youtube.com/DipeshPal17)
