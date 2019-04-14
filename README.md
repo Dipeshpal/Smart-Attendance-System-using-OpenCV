@@ -52,6 +52,8 @@ Just go to your project root folder "Toto-Smart-Attendance-System". Then change 
 It will start server in your local  machine. Now just hit your local server ip provided by the project in you terminal and just start using project.
     
 You may need to create superuser to explore all functionality.
+
+If you want to know backend of OpenCv used in this project then just [click here](https://github.com/Dipeshpal/OpenCV-Face-Recognition/edit/master/README.md)
     
 
 # Features of Smart Attendance System-
@@ -70,6 +72,19 @@ You may need to create superuser to explore all functionality.
 5. Sklearn
 6. Numpy
 7. Sqlite
+8. HTML, CSS, JavaScripts, Bootstrap, Jquery
 
 # Any questions?
 Feel free to contact me
+
+# License-
+You have to give me credit
+You can add following lines in your project/code/videos/document to give me credit.
+
+```
+Credit: Dipesh Pal
+Project is originally developed by Dipesh Pal.
+github.com/Dipeshpal
+www.dipeshpal.com
+www.youtube.com/DipeshPal17
+```
