@@ -78,7 +78,7 @@ If you want to know backend of OpenCv used in this project then just [click here
 Feel free to contact me
 
 # License-
-You have to give me credi.
+You have to give me credit.
 
 You can add following lines in your project/code/videos/document to give me credit.
 
