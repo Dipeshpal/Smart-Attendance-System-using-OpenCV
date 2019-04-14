@@ -3,7 +3,7 @@
 Smart Attendance System is the way to modernized the existing method of marking attendance on register. It helps to reduce complexity of management. Smart Attendance System not only provide record of attendance of student, it uses Machine Learning technique to identify person facial details to mark attendance on database and it can also perform statistical analysis of student data and provide recommendation to student. It is smart because it provide attendance record to student, teacher and admin in digitalize ways.
 
 ### What this project is all about?
- This project is all about attendance management sysetm in digitilize ways by using Facial Recogition with the help of Machine Learning.
+ This project is all about attendance management sysetm in digitilize ways by using Facial Recognition with the help of Machine Learning.
  
 ## Getting Started
 
