@@ -154,7 +154,7 @@ def choice(ch, img_file):
 
 
             if flag == 1:
-                print("Checking Capture Image")
+                # print("Checking Capture Image")
                 check_face.check(clf, img_file)
             else:
                 x_train, x_test, y_train, y_test = create_numpy_dataset()
@@ -191,7 +191,29 @@ def choice(ch, img_file):
             else:
                 read_model = 'face_recognition/Face_Recognition/model/finalized_model.sav'
                 clf = joblib.load(read_model)
-                print("Checking Capture Image")
+                # print("Checking Capture Image")
                 check_face.check(clf, img_file)
+    except:
+        print("Invalid input try again")
+
+
+def choice2(ch):
+    # print("Press 1 for RUN model (automatically detect if previous model present)")
+    # print("Press 2 for create new model (overwrite existing model)")
+    # print("Press 3 for check your image")
+
+    choice = ch
+
+    flag = 0
+
+    try:
+        if choice == 2:
+            x_train, x_test, y_train, y_test = create_numpy_dataset()
+            training_dataset()
+
+            clf = fit_classifire()
+
+            testing_dataset(clf)
+            print("New model created successfully, now check your image (choose choice=3)")
     except:
         print("Invalid input try again")

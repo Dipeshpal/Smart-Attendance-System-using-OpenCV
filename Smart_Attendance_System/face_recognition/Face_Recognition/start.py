@@ -1,9 +1,10 @@
 from .Video_to_Image_Split import extraction, rotate
-from .face_recognition import choice
+from .face_recognition import choice, choice2
 from .fetch import fetching
 import shutil
 import os
 import cv2
+from .attendance_camera import cam_attendance
 
 # Find current face_train.py directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -38,7 +39,7 @@ def start_training():
     rotate.rotate()
 
     # ML Training module call with choice 2
-    choice(2)
+    choice2(2)
 
 
 def start_check_image():
@@ -47,6 +48,7 @@ def start_check_image():
         for file in files:
             if file.endswith("png") or file.endswith("jpg"):
                 path, label = get_path_and_label(root, file)
+                print("Checking Image: ", path)
                 img = cv2.imread(path)
 
                 # move(img, 'face_recognition/Face_Recognition/check_image')
@@ -67,3 +69,7 @@ def fetch_data(roll_no):
         total_present_days = 'Not Found'
         precentage = 'Not Found'
         return enrollment_no, name, total_days, total_present_days, precentage
+
+
+def camera_attendance_start():
+    cam_attendance()

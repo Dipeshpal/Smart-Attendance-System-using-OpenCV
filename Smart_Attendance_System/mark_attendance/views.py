@@ -27,3 +27,10 @@ def mark_attendance(request):
 @login_required(login_url="/accounts/login/")
 def mark_attendance_success(request):
     return render(request, 'mark_attendance/success.html')
+
+
+@login_required(login_url="/accounts/login/")
+def camera_attendance(request):
+    trigger.start_camera_attendance()
+    trigger.start()
+    return render(request, 'mark_attendance/success.html')
