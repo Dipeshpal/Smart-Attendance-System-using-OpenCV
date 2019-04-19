@@ -3,6 +3,7 @@ from datetime import datetime
 
 
 def attendance(roll_no, name, mark):
+    roll_no = str(roll_no)
     # connecting to the database
     connection = sqlite3.connect("Attendance2.db")
 
@@ -10,9 +11,10 @@ def attendance(roll_no, name, mark):
     crsr = connection.cursor()
 
     # Create Table if not exist
-    sql_command = """CREATE TABLE IF NOT EXISTS attend ( 
-    roll_number INTEGER PRIMARY KEY, 
-    name VARCHAR(20));"""
+    sql_command = """CREATE TABLE IF NOT EXISTS attend (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    roll_no VARCHAR(20),
+    name VARCHAR(20), unique(roll_no));"""
+
 
     crsr.execute(sql_command)
 
@@ -28,13 +30,13 @@ def attendance(roll_no, name, mark):
         crsr.execute("ALTER TABLE Attend ADD COLUMN '{cn}' DATE".format(cn=date))
 
     try:
-        sql = """INSERT INTO attend (roll_number, name) Values(?, ?)"""
+        sql = """INSERT INTO attend (roll_no, name) Values(?, ?)"""
         val = (roll_no, name)
         crsr.execute(sql, val)
     except:
         pass
 
-    crsr.execute("UPDATE Attend set ('{}')=('{}')  WHERE roll_number=('{}') ".format(date, mark, roll_no))
+    crsr.execute("UPDATE Attend set ('{}')=('{}')  WHERE roll_no=('{}') ".format(date, mark, roll_no))
 
     connection.commit()
 

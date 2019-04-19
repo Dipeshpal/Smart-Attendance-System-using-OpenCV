@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from . import attend
+from . import image_dataset_directory_finder
 
 
 def check(clf, img_file):
@@ -34,17 +35,26 @@ def check(clf, img_file):
 
         prediction_face = prediction_face[0]
 
-        if prediction_face == 0:
-            print("Gayyur")
-            roll_no = 22
-            name = 'Gayyur'
-            attend.attendance(roll_no, name, 'p')
-        elif prediction_face == 1:
-            roll_no = 74
-            name = 'Totlaney'
-            attend.attendance(roll_no, name, 'p')
-        else:
-            print("Dont' know")
+        # find dir name respected to predicted face
+        name, roll = image_dataset_directory_finder.find_dir(prediction_face)
+
+        print("Face Detected: ", name)
+        print("Roll Number: ", roll)
+
+        attend.attendance(roll, name, 'p')
+
+        # if prediction_face == 0:
+        #     print("Gayyur")
+        #     roll_no = 22
+        #     name = 'Gayyur'
+        #     ans = attend.attendance(roll_no, name, 'p')
+        #     print("Ans: ", ans)
+        # elif prediction_face == 1:
+        #     roll_no = 74
+        #     name = 'Totlaney'
+        #     attend.attendance(roll_no, name, 'p')
+        # else:
+        #     print("Dont' know")
 
     #         Find face folder name roll and call attendance
     except:

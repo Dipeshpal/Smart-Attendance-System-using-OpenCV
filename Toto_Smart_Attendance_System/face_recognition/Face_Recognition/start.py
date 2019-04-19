@@ -53,8 +53,17 @@ def start_check_image():
                 # print("line 56")
                 # Check Image
                 choice(3, img)
+                os.remove(path)
 
 
 def fetch_data(roll_no):
-    enrollment_no, name, total_days, total_present_days, precentage = fetching(roll_no)
-    return enrollment_no, name, total_days, total_present_days, precentage
+    try:
+        enrollment_no, name, total_days, total_present_days, precentage = fetching(roll_no)
+        return enrollment_no, name, total_days, total_present_days, precentage
+    except:
+        enrollment_no = 'Not Found'
+        name = 'Not Found'
+        total_days = 'Not Found'
+        total_present_days = 'Not Found'
+        precentage = 'Not Found'
+        return enrollment_no, name, total_days, total_present_days, precentage
