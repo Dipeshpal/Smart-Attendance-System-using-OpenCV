@@ -1,7 +1,0 @@
-python=3.6.6
-Django==2.1.7
-django-pagedown==1.0.6
-pilow=5.4.1
-opencv-python==3.4.0.14
-xlrd 1.2.0
-
