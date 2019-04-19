@@ -60,12 +60,14 @@ def create_dataset():
     y_labels = []
     label_ids = {}
     current_id = 0
-
+    print("Starting dataset creation")
+    print("Img Dir: ", image_dir)
+    print("CWD: ", os.getcwd())
     # Look into image_dir and loop through all files in all directory under images_dataset
     for root, dirs, files in os.walk(image_dir):
         for file in files:
             if file.endswith("png") or file.endswith("jpg"):
-                print("File: ", files)
+                # print("File: ")
 
                 path, label = get_path_and_label(root, file)
 

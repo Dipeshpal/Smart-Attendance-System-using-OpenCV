@@ -8,7 +8,7 @@ video_capture = cv2.VideoCapture(0)
 def cam_attendance():
     i = 0
     count = 0
-    while count != 500:
+    while count != 50:
         # Capture frame-by-frame
         retval, frame = video_capture.read()
         frame = cv2.flip(frame, 1, 0)
@@ -37,7 +37,7 @@ def cam_attendance():
             print("Save: ", count)
             cv2.waitKey(20)
 
-            if count == 100:
+            if count == 50:
                 break
 
         # Display the resulting frame
