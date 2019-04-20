@@ -45,9 +45,7 @@ Once you install these in your machine then just run project.
 #### How to run project?
 Just go to your project root folder "Toto-Smart-Attendance-System". Then change directory to "Toto_Smart_Attendance_System" folder and now open command prompt/Terminal and then run following command-
 
-    ```
     python manage.py runserver
-    ```
     
 It will start server in your local  machine. Now just hit your local server ip provided by the project in you terminal and just start using project.
     
